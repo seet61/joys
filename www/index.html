@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>EaselJS Circle</title>
+        <title>EaselJS Circle Demo</title>
+        <script type="text/javascript" src="js/easeljs-0.8.2.min.js"></script>
+        <script>
+            var stage, circle;
+            var i = 0;
+
+            function init() {
+                stage = new createjs.Stage("canvas");
+                circle = new createjs.Shape();
+                circle.graphics.beginFill("red").drawCircle(0, 0, 50);
+                var label = new createjs.Text("drag me", "bold 14px Arial", "#FFFFFF");
+                label.textAlign = "center";
+                label.y = -7;
+
+                var dragger = new createjs.Container();
+                dragger.x = dragger.y = 100;
+                dragger.addChild(circle, label);
+                stage.addChild(dragger);
+
+                dragger.on("pressmove", eventMove);
+                stage.update();
+            }
+            
+            function eventMove(event) {
+                event.currentTarget.x = event.stageX;
+                event.currentTarget.y = event.stageY;
+                stage.update(event);
+            }
+
+        </script>
+        <script type="text/javascript" src="cordova.js"></script>
+    </head>
+    <body onload="init();">
+        <canvas id="canvas" width="500" height="300"></canvas>
+        <h5>Heellllooooo!</h5>
+    </body>
+</html>

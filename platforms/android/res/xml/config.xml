@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.cleepsa.joys" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>Joys</name>
+    <description>
+        A blank Joy game
+    </description>
+    <author email="support@cleepsa.ru" href="http://cleepsa.ru">
+        Cleepsa Team
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <preference name="loglevel" value="DEBUG" />
+    <preference name="Orientation" value="landscape" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="Fullscreen" value="true" />
+    <preference name="phonegap-version" value="cli-6.1.0" />
+</widget>
