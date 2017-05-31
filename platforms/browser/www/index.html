@@ -13,10 +13,10 @@
             function init() {
                 stage = new createjs.Stage("canvas");
                 circle = new createjs.Shape();
-                circle.graphics.beginFill("red").drawCircle(0, 0, 50);
-                var label = new createjs.Text("drag me", "bold 14px Arial", "#FFFFFF");
+                circle.graphics.beginFill("red").drawCircle(0, 0, 20);
+                var label = new createjs.Text("drag me", "bold 8px Arial", "#FFFFFF");
                 label.textAlign = "center";
-                label.y = -7;
+                label.y = -5;
 
                 var dragger = new createjs.Container();
                 dragger.x = dragger.y = 100;
@@ -24,6 +24,7 @@
                 stage.addChild(dragger);
 
                 dragger.on("pressmove", eventMove);
+                //dragger.addEventListener("pressmove", eventMove);
                 stage.update();
             }
             
@@ -35,9 +36,16 @@
 
         </script>
         <script type="text/javascript" src="cordova.js"></script>
+        <style>
+            canvas {
+                width:  100%;
+                height: 100%;
+                margin: 0px;
+            }
+        </style>
     </head>
     <body onload="init();">
-        <canvas id="canvas" width="500" height="300"></canvas>
-        <h5>Heellllooooo!</h5>
+        <canvas id="canvas"></canvas>
+        <!--<h5>Heellllooooo!</h5>-->
     </body>
 </html>
